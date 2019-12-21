@@ -1,6 +1,48 @@
+:root {
+    --gutter: 20px;
+}
+
 body{
 	padding: 0;
-	margin: 0;
+	margin: 20px;
     background:#f4f4f4;
-    position: absolute
+    position: relative;
+}
+
+/* YA SON SPONSORS */
+
+.yasonsponsors{
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+}
+
+.yasonsponsors > * {
+    grid-column: 2 / -2;
+}
+
+.sponsors{
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: repeat(6, calc(50% - var(--gutter) * 2));
+    grid-template-rows: minmax(150px, 1fr);
+  
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.25 * var(--gutter));
+}
+
+.sponsors > li,
+.sponsor {
+  scroll-snap-align: center;
+  padding: calc(var(--gutter) / 2 * 1.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
 }
